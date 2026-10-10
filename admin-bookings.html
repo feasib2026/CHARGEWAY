@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Bookings - ChargeWay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <!-- Admin Sidebar -->
+    <div class="admin-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ChargeWay</span>
+            </div>
+            <button class="sidebar-close" onclick="toggleAdminSidebar()">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="sidebar-link">
+                <span class="sidebar-icon"></span>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-bookings.html" class="sidebar-link active">
+                <span class="sidebar-icon"></span>
+                <span>Bookings</span>
+            </a>
+            <a href="admin-chargers.html" class="sidebar-link">
+                <span class="sidebar-icon"></span>
+                <span>Chargers</span>
+            </a>
+            <a href="admin-schedule.html" class="sidebar-link">
+                <span class="sidebar-icon"></span>
+                <span>Schedule</span>
+            </a>
+            <a href="admin-customers.html" class="sidebar-link">
+                <span class="sidebar-icon"></span>
+                <span>Customers</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" target="_blank" class="sidebar-link">
+                <span class="sidebar-icon">🌐</span>
+                <span>View Website</span>
+            </a>
+            <a href="#" class="sidebar-link logout" onclick="logout()">
+                <span class="sidebar-icon">🚪</span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Admin Main Content -->
+    <div class="admin-main">
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <button class="sidebar-toggle" onclick="toggleAdminSidebar()">☰</button>
+            <div class="header-content">
+                <h1>Booking Management</h1>
+                <p>View and manage all customer bookings</p>
+            </div>
+            <div class="header-actions">
+                <div class="admin-info">
+                    <span class="admin-avatar">👤</span>
+                    <span class="admin-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Bookings Content -->
+        <main class="admin-content">
+            <!-- Filters -->
+            <div class="admin-panel">
+                <div class="panel-header">
+                    <h2>Filters</h2>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <label for="statusFilter">Filter by Status:</label>
+                        <select id="statusFilter" class="form-control" onchange="filterBookings()">
+                            <option value="all">All Statuses</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Confirmed">Confirmed</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="dateFilter">Filter by Date:</label>
+                        <input type="date" id="dateFilter" class="form-control" onchange="filterBookings()">
+                    </div>
+                    <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+                </div>
+            </div>
+
+            <!-- Bookings Table -->
+            <div class="admin-panel">
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Customer</th>
+                                <th>Contact</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Charger</th>
+                                <th>Car Brand</th>
+                                <th>Vehicle</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookingsTable">
+                            <!-- Bookings will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Booking Details Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Booking Details</h2>
+                <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-modal-content" id="bookingModalContent">
+                    <!-- Details will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin-bookings.js"></script>
+</body>
+</html>

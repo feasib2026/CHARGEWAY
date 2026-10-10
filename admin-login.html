@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Login - ChargeWay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ChargeWay</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="stations.html" class="nav-link">Charging Stations</a></li>
+                <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="section">
+        <div class="container">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>Admin Login</h1>
+                    <p>Access the ChargeWay administration panel</p>
+                </div>
+                <div class="login-content">
+                    <div class="login-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=500&fit=crop" 
+                             alt="Admin dashboard" 
+                             class="login-img"
+                             onerror="this.src='https://via.placeholder.com/400x500/1a365d/00d4aa?text=Admin+Dashboard'">
+                    </div>
+                    <div class="login-form">
+                        <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+                            <div class="form-group">
+                                <label for="adminUsername">Username *</label>
+                                <input type="text" id="adminUsername" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPassword">Password *</label>
+                                <input type="password" id="adminPassword" class="form-control" required>
+                            </div>
+                            <div class="form-error" id="loginError" style="display: none;"></div>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </form>
+                        <div class="demo-credentials">
+                            <h4>Demo Credentials</h4>
+                            <p><strong>Username:</strong> admin</p>
+                            <p><strong>Password:</strong> admin123</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChargeWay. All rights reserved. | Feasibility Study Prototype</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="admin-login.js"></script>
+    <script>
+        // Check if already logged in, redirect to dashboard
+        if (checkAdminAuth()) {
+            window.location.href = 'admin-dashboard.html';
+        }
+    </script>
+</body>
+</html>

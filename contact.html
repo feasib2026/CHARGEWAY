@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact Us - ChargeWay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ChargeWay</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="stations.html" class="nav-link">Charging Stations</a></li>
+                <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with ChargeWay</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-page-content">
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" class="form-control" required>
+                                <option value="">-- Select a subject --</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Booking Support">Booking Support</option>
+                                <option value="Technical Issue">Technical Issue</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Partnership">Partnership Inquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div class="form-success" id="contactSuccess" style="display: none;">
+                        <p>Thank you! Your message has been received. We'll get back to you soon.</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=300&fit=crop" 
+                             alt="Charging station customer service" 
+                             class="contact-section-image"
+                             onerror="this.src='https://via.placeholder.com/500x300/1a365d/00d4aa?text=Customer+Service'">
+                        <h2>Contact Information</h2>
+                        <div class="contact-detail-item">
+                            <span class="contact-detail-icon">📍</span>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Robinsons Place Antipolo<br>
+                                Sumulong Highway corner Circumferential Road<br>
+                                Barangay Dela Paz, Antipolo City, Rizal 1870</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <span class="contact-detail-icon">📞</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>0285645481</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <span class="contact-detail-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@chargeway.ph</p>
+                                <p>support@chargeway.ph</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <span class="contact-detail-icon">🕐</span>
+                            <div>
+                                <h4>Operating Hours</h4>
+                                <p>Daily: 10:00 AM – 10:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <span class="contact-detail-icon">📘</span>
+                            <div>
+                                <h4>Facebook</h4>
+                                <p><a href="https://www.facebook.com/profile.php?id=61593691683605&rdid=TfcI6F1ngGwXyEEB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DoyYRreYa%2F#" target="_blank" style="color: var(--primary-navy); text-decoration: underline; font-weight: 500;">ChargeWay</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-media-section">
+                        <h2>Follow Us</h2>
+                        <p>Stay connected with ChargeWay on social media</p>
+                        <div class="social-links-large">
+                            <a href="https://www.facebook.com/profile.php?id=61593691683605&rdid=TfcI6F1ngGwXyEEB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DoyYRreYa%2F#" target="_blank" class="social-link-large">
+                                <span class="social-icon">📘</span>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChargeWay. All rights reserved. | Feasibility Study Prototype | <a href="admin-login.html" style="color: var(--primary-green);">Admin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            // Save contact message to LocalStorage
+            const contactMessage = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                subject: document.getElementById('contactSubject').value,
+                message: document.getElementById('contactMessage').value,
+                createdAt: new Date().toISOString()
+            };
+            
+            // Get existing messages
+            const messages = JSON.parse(localStorage.getItem('chargeway_contact_messages') || '[]');
+            messages.push(contactMessage);
+            localStorage.setItem('chargeway_contact_messages', JSON.stringify(messages));
+            
+            // Show success message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('contactSuccess').style.display = 'block';
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>

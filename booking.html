@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Book a Charging Slot - ChargeWay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ChargeWay</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="stations.html" class="nav-link">Charging Stations</a></li>
+                <li><a href="booking.html" class="nav-link active">Book Now</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book a Charging Slot</h1>
+            <p>Reserve your charging slot in advance</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Progress Steps -->
+                <div class="booking-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Booking Details</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Confirm</div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Booking Details -->
+                <div class="booking-step active" id="step1">
+                    <h2>Booking Details</h2>
+                    <form id="bookingDetailsForm" onsubmit="event.preventDefault(); goToStep(2);">
+                        <!-- Date & Time -->
+                        <div class="form-section">
+                            <h3>Date & Time</h3>
+                            <div class="form-group">
+                                <label for="bookingDate">Select Date *</label>
+                                <input type="date" id="bookingDate" class="form-control" required>
+                                <small class="form-help">Cannot select past dates</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">Select Time Slot *</label>
+                                <select id="bookingTime" class="form-control" required>
+                                    <option value="">-- Select a time slot --</option>
+                                    <option value="10:00">10:00 AM – 11:00 AM</option>
+                                    <option value="11:00">11:00 AM – 12:00 PM</option>
+                                    <option value="12:00">12:00 PM – 1:00 PM</option>
+                                    <option value="13:00">1:00 PM – 2:00 PM</option>
+                                    <option value="14:00">2:00 PM – 3:00 PM</option>
+                                    <option value="15:00">3:00 PM – 4:00 PM</option>
+                                    <option value="16:00">4:00 PM – 5:00 PM</option>
+                                    <option value="17:00">5:00 PM – 6:00 PM</option>
+                                    <option value="18:00">6:00 PM – 7:00 PM</option>
+                                    <option value="19:00">7:00 PM – 8:00 PM</option>
+                                    <option value="20:00">8:00 PM – 9:00 PM</option>
+                                    <option value="21:00">9:00 PM – 10:00 PM</option>
+                                </select>
+                                <small class="form-help">Operating hours: 10:00 AM – 10:00 PM</small>
+                            </div>
+                        </div>
+
+                        <!-- Customer Information -->
+                        <div class="form-section">
+                            <h3>Customer Information</h3>
+                            <div class="form-group">
+                                <label for="customerName">Full Name *</label>
+                                <input type="text" id="customerName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactNumber">Contact Number *</label>
+                                <input type="tel" id="contactNumber" class="form-control" required pattern="[0-9]{11}" placeholder="09XXXXXXXXX">
+                                <small class="form-help">11-digit mobile number</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="carBrand">Car Brand *</label>
+                                <select id="carBrand" class="form-control" required>
+                                    <option value="">-- Select car brand --</option>
+                                    <option value="BYD">BYD</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="VinFast">VinFast</option>
+                                    <option value="Jetour">Jetour</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="otherCarBrandGroup" style="display: none;">
+                                <label for="otherCarBrand">Please specify car brand *</label>
+                                <input type="text" id="otherCarBrand" class="form-control" placeholder="Enter your car brand">
+                            </div>
+                        </div>
+
+                        <!-- Charger Selection -->
+                        <div class="form-section">
+                            <h3>Charging Connector/Type *</h3>
+                            <div class="form-group">
+                                <label for="chargerSelection">Select Machine & Port *</label>
+                                <select id="chargerSelection" class="form-control" required>
+                                    <option value="">-- Select machine and port --</option>
+                                </select>
+                                <small class="form-help">Choose your charging machine and connector type</small>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="booking-actions">
+                            <button type="submit" class="btn btn-primary" id="step1Next">Next: Review Booking</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 2: Booking Summary -->
+                <div class="booking-step" id="step2">
+                    <h2>Booking Summary</h2>
+                    <div class="booking-summary" id="bookingSummary">
+                        <!-- Summary will be populated dynamically -->
+                    </div>
+                    <div class="booking-actions">
+                        <button class="btn btn-secondary" onclick="goToStep(1)">Edit Booking</button>
+                        <button class="btn btn-primary" onclick="confirmBooking()">Confirm Booking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Booking Confirmed!</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-message">
+                    <p>Your charging slot has been successfully reserved.</p>
+                </div>
+                <div class="confirmation-details" id="confirmationDetails">
+                    <!-- Details will be populated dynamically -->
+                </div>
+                <div class="confirmation-actions">
+                    <button class="btn btn-secondary" onclick="printConfirmation()">Print Confirmation</button>
+                    <button class="btn btn-primary" onclick="closeModal(); window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChargeWay. All rights reserved. | Feasibility Study Prototype | <a href="admin-login.html" style="color: var(--primary-green);">Admin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>

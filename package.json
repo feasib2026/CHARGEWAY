@@ -1,0 +1,20 @@
+{
+  "name": "chargeway",
+  "version": "1.0.0",
+  "description": "ChargeWay Electric Vehicle Charging Station Website",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "netlify deploy --prod",
+    "deploy:preview": "netlify deploy"
+  },
+  "keywords": [
+    "ev-charging",
+    "charging-station",
+    "booking-system"
+  ],
+  "author": "ChargeWay",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

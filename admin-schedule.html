@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admin Schedule - ChargeWay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <!-- Admin Sidebar -->
+    <div class="admin-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ChargeWay</span>
+            </div>
+            <button class="sidebar-close" onclick="toggleAdminSidebar()">✕</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="sidebar-link">
+                <span class="sidebar-icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-bookings.html" class="sidebar-link">
+                <span class="sidebar-icon">📅</span>
+                <span>Bookings</span>
+            </a>
+            <a href="admin-chargers.html" class="sidebar-link">
+                <span class="sidebar-icon">🔌</span>
+                <span>Chargers</span>
+            </a>
+            <a href="admin-schedule.html" class="sidebar-link active">
+                <span class="sidebar-icon">📋</span>
+                <span>Schedule</span>
+            </a>
+            <a href="admin-customers.html" class="sidebar-link">
+                <span class="sidebar-icon">👥</span>
+                <span>Customers</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" target="_blank" class="sidebar-link">
+                <span class="sidebar-icon">🌐</span>
+                <span>View Website</span>
+            </a>
+            <a href="#" class="sidebar-link logout" onclick="logout()">
+                <span class="sidebar-icon">🚪</span>
+                <span>Logout</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Admin Main Content -->
+    <div class="admin-main">
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <button class="sidebar-toggle" onclick="toggleAdminSidebar()">☰</button>
+            <div class="header-content">
+                <h1>Daily Schedule</h1>
+                <p>View charger schedule by date</p>
+            </div>
+            <div class="header-actions">
+                <div class="admin-info">
+                    <span class="admin-avatar">👤</span>
+                    <span class="admin-name">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Schedule Content -->
+        <main class="admin-content">
+            <!-- Date Selector -->
+            <div class="admin-panel">
+                <div class="panel-header">
+                    <h2>Date Selection</h2>
+                </div>
+                <div class="schedule-controls">
+                    <div class="form-group">
+                        <label for="scheduleDate">Select Date:</label>
+                        <input type="date" id="scheduleDate" class="form-control" onchange="loadSchedule()">
+                    </div>
+                    <button class="btn btn-primary" onclick="goToToday()">Today</button>
+                    <button class="btn btn-primary" onclick="goToTomorrow()">Tomorrow</button>
+                </div>
+            </div>
+
+            <!-- Schedule Grid -->
+            <div class="admin-panel">
+                <div class="panel-header">
+                    <h2>Charger Schedule</h2>
+                </div>
+                <div class="schedule-container" id="scheduleContainer">
+                    <!-- Schedule will be loaded dynamically -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin-schedule.js"></script>
+</body>
+</html>

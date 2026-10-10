@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Charging Stations - ChargeWay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ChargeWay</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="stations.html" class="nav-link active">Charging Stations</a></li>
+                <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Charging Stations</h1>
+            <p>View our available charging units and their current status</p>
+        </div>
+    </section>
+
+    <!-- Charging Stations Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Charging Machines</h2>
+            <p class="section-subtitle">4 Charging Machines with 4 Guns Each</p>
+            <div class="stations-grid" id="stationsGrid">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ChargeWay. All rights reserved. | Feasibility Study Prototype | <a href="admin-login.html" style="color: var(--primary-green);">Admin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load stations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStations();
+        });
+    </script>
+</body>
+</html>
